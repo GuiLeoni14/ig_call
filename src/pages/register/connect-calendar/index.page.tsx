@@ -14,7 +14,7 @@ export default function Register() {
   const handleConnectCalendar = async () => {
     await signIn('google')
   }
-
+  console.log(session)
   return (
     <S.Container>
       <S.Header>
