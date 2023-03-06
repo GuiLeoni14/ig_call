@@ -14,6 +14,10 @@ export default function Register() {
   const handleConnectCalendar = async () => {
     await signIn('google')
   }
+
+  async function handleNavigateToNextStep() {
+    await router.push('/register/time-intervals')
+  }
   console.log(session)
   return (
     <S.Container>
@@ -50,7 +54,11 @@ export default function Register() {
             permissões de acesso ao Google Calendar
           </S.AuthError>
         )}
-        <Button type="submit" disabled={!isSignedIn}>
+        <Button
+          type="submit"
+          onClick={handleNavigateToNextStep}
+          disabled={!isSignedIn}
+        >
           Próximo passo
           <ArrowRight />
         </Button>
